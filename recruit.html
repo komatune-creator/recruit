@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>採用情報｜小松トータルケアクリニック</title>
+<style>
+  :root{
+    --ink:#1B2A2E;
+    --sub:#4C5E62;
+    --line:#DCE3E1;
+    --bg:#FAF9F6;
+    --card:#FFFFFF;
+    --brand:#1F5C52;
+    --brand-dark:#123B34;
+    --brand-tint:#E7F1EE;
+    --nurse:#8B2635;
+    --nurse-tint:#FBEAEA;
+    --office:#1A5F7A;
+    --office-tint:#E9F3F7;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"Hiragino Sans","Yu Gothic",-apple-system,BlinkMacSystemFont,sans-serif;
+    line-height:1.75;
+    -webkit-text-size-adjust:100%;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px 80px;}
+
+  header.hero{
+    padding:56px 20px 44px;
+    background:linear-gradient(180deg,var(--brand-dark) 0%, var(--brand) 100%);
+    color:#F3F7F5;
+  }
+  header.hero .inner{max-width:760px;margin:0 auto;}
+  .eyebrow{
+    font-size:13px;letter-spacing:.14em;text-transform:uppercase;
+    color:#BFE3D8;margin:0 0 14px;font-weight:600;
+  }
+  h1{font-size:clamp(26px,5vw,34px);margin:0 0 14px;font-weight:700;letter-spacing:.01em;}
+  .hero-meta{font-size:15px;color:#D7E8E3;margin:0;}
+  .hero-meta strong{color:#fff;font-weight:600;}
+
+  section{padding:44px 0;border-bottom:1px solid var(--line);}
+  section:last-of-type{border-bottom:none;}
+  h2{font-size:20px;margin:0 0 18px;font-weight:700;}
+  p.lead{color:var(--sub);font-size:15px;margin:0 0 8px;}
+
+  .role-card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:26px 24px;
+    margin-bottom:22px;
+  }
+  .role-card.nurse{border-top:4px solid var(--nurse);}
+  .role-card.office{border-top:4px solid var(--office);}
+  .role-head{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:6px;}
+  .role-head h3{font-size:19px;margin:0;font-weight:700;}
+  .role-tag{
+    font-size:12px;font-weight:700;padding:4px 12px;border-radius:99px;white-space:nowrap;
+  }
+  .nurse .role-tag{background:var(--nurse-tint);color:var(--nurse);}
+  .office .role-tag{background:var(--office-tint);color:var(--office);}
+
+  .role-sub{color:var(--sub);font-size:14px;margin:0 0 18px;}
+
+  dl.spec{margin:0 0 18px;display:grid;grid-template-columns:88px 1fr;gap:8px 14px;}
+  dl.spec dt{font-size:13px;color:var(--sub);font-weight:600;}
+  dl.spec dd{margin:0;font-size:14.5px;}
+
+  ul.bullets{margin:0;padding-left:1.2em;font-size:14.5px;}
+  ul.bullets li{margin-bottom:4px;}
+  .bullets-label{font-size:13px;color:var(--sub);font-weight:600;margin:14px 0 6px;}
+
+  /* application form */
+  form{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px 24px;}
+  .field{margin-bottom:18px;}
+  .field label{display:block;font-size:13.5px;font-weight:600;margin-bottom:6px;}
+  .field .hint{font-size:12px;color:var(--sub);font-weight:400;margin-left:6px;}
+  input[type="text"],input[type="email"],input[type="tel"],select,textarea{
+    width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:8px;
+    font-size:15px;font-family:inherit;background:#fff;color:var(--ink);
+  }
+  input:focus,select:focus,textarea:focus{
+    outline:none;border-color:var(--brand);box-shadow:0 0 0 3px var(--brand-tint);
+  }
+  textarea{resize:vertical;min-height:96px;}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  @media (max-width:520px){.row2{grid-template-columns:1fr;}}
+
+  button.submit{
+    width:100%;padding:14px;border:none;border-radius:8px;
+    background:var(--brand);color:#fff;font-size:16px;font-weight:700;
+    cursor:pointer;transition:background .15s ease;
+  }
+  button.submit:hover{background:var(--brand-dark);}
+  button.submit:disabled{background:#9BB3AE;cursor:default;}
+
+  .form-note{font-size:12.5px;color:var(--sub);margin-top:12px;}
+
+  #form-status{
+    display:none;padding:14px 16px;border-radius:8px;font-size:14.5px;margin-bottom:18px;
+  }
+  #form-status.ok{display:block;background:var(--brand-tint);color:var(--brand-dark);}
+  #form-status.err{display:block;background:var(--nurse-tint);color:var(--nurse);}
+
+  footer{padding:32px 0 0;color:var(--sub);font-size:13px;}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="inner">
+    <p class="eyebrow">Recruit</p>
+    <h1>小松トータルケアクリニック<br>採用情報</h1>
+    <p class="hero-meta">
+      <strong>2027年2月開業</strong>　千葉県市原市ちはら台<br>
+      血液内科・一般内科を基本に、抗加齢医療、睡眠外来、減酒外来を展開する専門クリニックです。
+    </p>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section id="about">
+    <h2>新しい医療のかたちを、一緒につくる仲間を探しています</h2>
+    <p class="lead">
+      開院前の準備段階から関われるオープニングスタッフを募集します。血液内科専門医かつ抗加齢医学専門医の院長のもと、iPadを活用したデジタル問診など、最新のツールを取り入れた効率的なクリニックづくりを進めています。
+    </p>
+  </section>
+
+  <section id="roles">
+    <h2>募集職種</h2>
+
+    <div class="role-card nurse">
+      <div class="role-head">
+        <h3>看護師</h3>
+        <span class="role-tag">正社員2名／非常勤1名</span>
+      </div>
+      <p class="role-sub">正看護師免許をお持ちの方（准看護師不可）</p>
+
+      <dl class="spec">
+        <dt>給与</dt><dd>正社員 月給32.0万円〜34.5万円（想定年収480万円〜520万円）／非常勤 時給2,200円</dd>
+        <dt>賞与</dt><dd>年2回（各1.5ヶ月分想定）</dd>
+      </dl>
+
+      <p class="bullets-label">業務内容</p>
+      <ul class="bullets">
+        <li>外来診療補助（血液内科・一般内科）</li>
+        <li>採血、静脈確保、検査介助</li>
+        <li>睡眠外来・減酒外来における問診補助、患者様への丁寧な傾聴対応</li>
+        <li>電子カルテおよびiPad問診（PWAツール）への入力・案内</li>
+      </ul>
+
+      <p class="bullets-label">歓迎する人物像</p>
+      <ul class="bullets">
+        <li>患者様の生活習慣に寄り添い、否定せず向き合える方</li>
+        <li>新しい医療知識・プロトコルを積極的に学ぶ意欲のある方</li>
+        <li>オープニングスタッフとして、ルールづくりに主体的に関われる方</li>
+      </ul>
+    </div>
+
+    <div class="role-card office">
+      <div class="role-head">
+        <h3>医療事務・受付</h3>
+        <span class="role-tag">正社員2名</span>
+      </div>
+      <p class="role-sub">医療事務・受付のご経験がある方は歓迎（レセプト経験者はなお歓迎）</p>
+
+      <dl class="spec">
+        <dt>給与</dt><dd>月給20.0万円〜27.5万円（想定年収300万円〜412万円）</dd>
+        <dt>賞与</dt><dd>年2回（各1.5ヶ月分想定）</dd>
+      </dl>
+
+      <p class="bullets-label">業務内容</p>
+      <ul class="bullets">
+        <li>受付・会計業務、電話応対・予約管理</li>
+        <li>保険証確認、レセプト業務（経験者歓迎、未経験の方は研修でサポート）</li>
+        <li>iPad問診（PWAツール）の患者様へのご案内・入力サポート</li>
+        <li>電子カルテ入力補助</li>
+      </ul>
+
+      <p class="bullets-label">歓迎する人物像</p>
+      <ul class="bullets">
+        <li>基本的なPC操作ができる方</li>
+        <li>患者様に丁寧で温かい対応ができる方</li>
+        <li>オープニングスタッフとして、ルールづくりに主体的に関われる方</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="apply">
+    <h2>応募フォーム</h2>
+    <p class="lead">下記フォームよりご応募ください。内容確認後、担当よりご連絡いたします。</p>
+
+    <div id="form-status"></div>
+
+    <form id="recruit-form">
+      <div class="field">
+        <label for="name">お名前</label>
+        <input type="text" id="name" name="name" required autocomplete="name">
+      </div>
+
+      <div class="row2">
+        <div class="field">
+          <label for="email">メールアドレス</label>
+          <input type="email" id="email" name="email" required autocomplete="email">
+        </div>
+        <div class="field">
+          <label for="phone">電話番号<span class="hint">（任意）</span></label>
+          <input type="tel" id="phone" name="phone" autocomplete="tel">
+        </div>
+      </div>
+
+      <div class="row2">
+        <div class="field">
+          <label for="position">希望職種</label>
+          <select id="position" name="position" required>
+            <option value="" disabled selected>選択してください</option>
+            <option value="看護師">看護師</option>
+            <option value="医療事務・受付">医療事務・受付</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="employment">希望雇用形態</label>
+          <select id="employment" name="employment" required>
+            <option value="" disabled selected>選択してください</option>
+            <option value="正社員（常勤）">正社員（常勤）</option>
+            <option value="パート・非常勤">パート・非常勤</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="message">志望動機・ご経験など<span class="hint">（任意）</span></label>
+        <textarea id="message" name="message" placeholder="ご経験や、応募のきっかけなどをお聞かせください"></textarea>
+      </div>
+
+      <button type="submit" class="submit" id="submit-btn">この内容で応募する</button>
+      <p class="form-note">送信いただいた内容は採用選考の目的のみに使用します。</p>
+    </form>
+  </section>
+
+  <footer>
+    <p>小松トータルケアクリニック（2027年2月開業予定）　千葉県市原市ちはら台</p>
+  </footer>
+
+</div>
+
+<script>
+  // ==========================================================
+  // Formspree設定: 下記 YOUR_FORM_ID を、Formspreeで新規発行した
+  // このページ専用のフォームIDに置き換えてください。
+  // https://formspree.io/ で新規フォームを作成 → 発行されたIDを
+  // "https://formspree.io/f/xxxxxxxx" の xxxxxxxx 部分にコピーします。
+  // ==========================================================
+  var FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
+
+  var form = document.getElementById("recruit-form");
+  var statusBox = document.getElementById("form-status");
+  var submitBtn = document.getElementById("submit-btn");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    submitBtn.disabled = true;
+    submitBtn.textContent = "送信中...";
+    statusBox.className = "";
+    statusBox.style.display = "none";
+
+    var data = new FormData(form);
+
+    fetch(FORMSPREE_ENDPOINT, {
+      method: "POST",
+      body: data,
+      headers: { "Accept": "application/json" }
+    }).then(function (response) {
+      if (response.ok) {
+        statusBox.textContent = "応募を受け付けました。ご応募ありがとうございます。担当よりご連絡いたします。";
+        statusBox.className = "ok";
+        form.reset();
+      } else {
+        statusBox.textContent = "送信に失敗しました。お手数ですが、時間をおいて再度お試しください。";
+        statusBox.className = "err";
+      }
+    }).catch(function () {
+      statusBox.textContent = "送信に失敗しました。お手数ですが、時間をおいて再度お試しください。";
+      statusBox.className = "err";
+    }).finally(function () {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "この内容で応募する";
+    });
+  });
+</script>
+
+</body>
+</html>
